@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/DBZ-Lose.mp3-4708b5b9d45dde6144969b91060d6b02.mp3str"
+
+[deps]
+
+source_file="res://imports/DBZ-Lose.mp3"
+dest_files=[ "res://.import/DBZ-Lose.mp3-4708b5b9d45dde6144969b91060d6b02.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

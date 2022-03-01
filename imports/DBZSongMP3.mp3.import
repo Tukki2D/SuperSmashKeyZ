@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/DBZSongMP3.mp3-742b45bf2bdc0478f4a4c2f89059bff1.mp3str"
+
+[deps]
+
+source_file="res://imports/DBZSongMP3.mp3"
+dest_files=[ "res://.import/DBZSongMP3.mp3-742b45bf2bdc0478f4a4c2f89059bff1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

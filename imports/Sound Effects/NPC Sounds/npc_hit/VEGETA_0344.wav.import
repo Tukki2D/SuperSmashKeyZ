@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/VEGETA_0344.wav-d596e6ed8ee70e243759cb1f320805ce.sample"
+
+[deps]
+
+source_file="res://imports/Sound Effects/NPC Sounds/npc_hit/VEGETA_0344.wav"
+dest_files=[ "res://.import/VEGETA_0344.wav-d596e6ed8ee70e243759cb1f320805ce.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

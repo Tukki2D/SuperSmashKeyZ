@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GOKU_0089.wav-0c36179d68347cc017c3231e81f12375.sample"
+
+[deps]
+
+source_file="res://imports/Sound Effects/GOKU_0089.wav"
+dest_files=[ "res://.import/GOKU_0089.wav-0c36179d68347cc017c3231e81f12375.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

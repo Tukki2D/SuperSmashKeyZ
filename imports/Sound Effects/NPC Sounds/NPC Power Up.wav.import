@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/NPC Power Up.wav-f7080f896b9de24f27efb34f6828ab56.sample"
+
+[deps]
+
+source_file="res://imports/Sound Effects/NPC Sounds/NPC Power Up.wav"
+dest_files=[ "res://.import/NPC Power Up.wav-f7080f896b9de24f27efb34f6828ab56.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

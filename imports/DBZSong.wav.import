@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DBZSong.wav-9de517ce9f31c4081aa372eb3c9fb565.sample"
+
+[deps]
+
+source_file="res://imports/DBZSong.wav"
+dest_files=[ "res://.import/DBZSong.wav-9de517ce9f31c4081aa372eb3c9fb565.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

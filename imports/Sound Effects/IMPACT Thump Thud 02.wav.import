@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/IMPACT Thump Thud 02.wav-673bce610b98aae5fbc00fd022f19e8d.sample"
+
+[deps]
+
+source_file="res://imports/Sound Effects/IMPACT Thump Thud 02.wav"
+dest_files=[ "res://.import/IMPACT Thump Thud 02.wav-673bce610b98aae5fbc00fd022f19e8d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

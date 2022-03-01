@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GOKU_0197.wav-74acd52c7c9422e91bd272287b2b7fd3.sample"
+
+[deps]
+
+source_file="res://imports/Sound Effects/goke_lose/GOKU_0197.wav"
+dest_files=[ "res://.import/GOKU_0197.wav-74acd52c7c9422e91bd272287b2b7fd3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

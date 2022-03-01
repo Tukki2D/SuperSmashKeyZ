@@ -1,0 +1,107 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Enemy/enemy_healthbar.gd" type="Script" id=1]
+[ext_resource path="res://resources/runtime_data.tres" type="Resource" id=2]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 1 )
+draw_center = false
+shadow_color = Color( 0.0392157, 0.0470588, 0.180392, 0.6 )
+shadow_size = 3
+shadow_offset = Vector2( 0.72, 1.09 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.831373, 0.662745, 0.215686, 1 )
+
+[sub_resource type="Theme" id=3]
+ProgressBar/colors/font_color = Color( 0.94, 0.94, 0.94, 1 )
+ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+ProgressBar/fonts/font = null
+ProgressBar/styles/bg = SubResource( 4 )
+ProgressBar/styles/fg = SubResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.392157, 0.133333, 0.623529, 1 )
+border_width_left = 2
+border_width_top = 1
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.0392157, 0.00392157, 0.00392157, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.0392157, 0.00392157, 0.00392157, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 1
+border_color = Color( 0.0392157, 0.00392157, 0.00392157, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.6, 0.141176, 0.141176, 1 )
+border_width_left = 2
+border_width_top = 1
+border_width_bottom = 2
+border_color = Color( 0.0392157, 0.00392157, 0.00392157, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 1, 0.819608, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.0392157, 0.0392157, 0.0392157, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+
+[node name="EnemyHealthBar" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+runtime_data = ExtResource( 2 )
+
+[node name="AllHealth" type="ProgressBar" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -200.0
+margin_top = 673.0
+margin_right = 202.0
+margin_bottom = 683.0
+theme = SubResource( 3 )
+custom_styles/fg = SubResource( 10 )
+custom_styles/bg = SubResource( 11 )
+value = 80.0
+percent_visible = false
+
+[node name="SavedHealth" type="ProgressBar" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -200.0
+margin_top = 673.0
+margin_right = 202.0
+margin_bottom = 683.0
+theme = SubResource( 3 )
+custom_styles/fg = SubResource( 7 )
+value = 60.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PowerUpBar" type="ProgressBar" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -200.0
+margin_top = 666.0
+margin_right = 202.0
+margin_bottom = 670.0
+custom_styles/fg = SubResource( 8 )
+custom_styles/bg = SubResource( 9 )
+value = 10.0
+percent_visible = false

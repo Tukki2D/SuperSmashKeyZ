@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Background/Water.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Background/camera_stand.gd" type="Script" id=4]
+
+[node name="Background" type="ViewportContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Water" parent="." instance=ExtResource( 3 )]
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 1280, 720 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="CameraStand" type="Spatial" parent="Viewport"]
+script = ExtResource( 4 )
+
+[node name="Camera" type="Camera" parent="Viewport/CameraStand"]
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 51.9101, 52.6471 )
+cull_mask = 1
+fov = 50.7
+size = 10.0
+far = 600.0

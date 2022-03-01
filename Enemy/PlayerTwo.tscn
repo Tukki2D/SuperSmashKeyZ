@@ -1,0 +1,121 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Enemy/enemy_fighter_controller.gd" type="Script" id=1]
+[ext_resource path="res://Enemy/enemy_health_bar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://resources/runtime_data.tres" type="Resource" id=3]
+[ext_resource path="res://Enemy/player_two_audio_controller.gd" type="Script" id=4]
+[ext_resource path="res://Enemy/timers/enemy_type_timers.tscn" type="PackedScene" id=5]
+
+[sub_resource type="AudioStreamRandomPitch" id=1]
+random_pitch = 4.1
+
+[node name="PlayerTwo" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 199.109, 0 )
+script = ExtResource( 1 )
+runtime_data = ExtResource( 3 )
+
+[node name="AudioController" type="Spatial" parent="."]
+script = ExtResource( 4 )
+
+[node name="EnemyAttack" type="AudioStreamPlayer" parent="AudioController"]
+stream = SubResource( 1 )
+volume_db = -6.933
+
+[node name="EnemyHurt" type="AudioStreamPlayer" parent="AudioController"]
+stream = SubResource( 1 )
+
+[node name="EnemyStart" type="AudioStreamPlayer" parent="AudioController"]
+
+[node name="EnemySpriteAnims" type="AnimatedSprite" parent="."]
+
+[node name="AttackAlarm" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="EnemyContainer" type="Spatial" parent="."]
+
+[node name="TextTimerController" parent="." instance=ExtResource( 5 )]
+script = null
+
+[node name="HitAnimations" type="Node2D" parent="."]
+position = Vector2( 652, 317 )
+
+[node name="Hit_Effects_Right" type="Node2D" parent="HitAnimations"]
+
+[node name="Hit_Marker_1" type="Position2D" parent="HitAnimations/Hit_Effects_Right"]
+position = Vector2( 48, -73 )
+
+[node name="Hit_Marker_2" type="Position2D" parent="HitAnimations/Hit_Effects_Right"]
+position = Vector2( 77, -45 )
+
+[node name="Hit_Marker_3" type="Position2D" parent="HitAnimations/Hit_Effects_Right"]
+position = Vector2( 90, -3 )
+
+[node name="Hit_Marker_4" type="Position2D" parent="HitAnimations/Hit_Effects_Right"]
+position = Vector2( 95, 47 )
+
+[node name="Hit_Marker_5" type="Position2D" parent="HitAnimations/Hit_Effects_Right"]
+position = Vector2( 66, 80 )
+
+[node name="Hit_Marker_6" type="Position2D" parent="HitAnimations/Hit_Effects_Right"]
+position = Vector2( 21, 114 )
+
+[node name="Hit_Marker_7" type="Position2D" parent="HitAnimations/Hit_Effects_Right"]
+position = Vector2( 12, -48 )
+
+[node name="Hit_Marker_8" type="Position2D" parent="HitAnimations/Hit_Effects_Right"]
+position = Vector2( 38, -11 )
+
+[node name="Hit_Marker_9" type="Position2D" parent="HitAnimations/Hit_Effects_Right"]
+position = Vector2( 18, 41 )
+
+[node name="Hit_Effects_Left" type="Node2D" parent="HitAnimations"]
+
+[node name="Hit_Marker_1" type="Position2D" parent="HitAnimations/Hit_Effects_Left"]
+position = Vector2( -49, -73 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
+[node name="Hit_Marker_2" type="Position2D" parent="HitAnimations/Hit_Effects_Left"]
+position = Vector2( -77, -45 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
+[node name="Hit_Marker_3" type="Position2D" parent="HitAnimations/Hit_Effects_Left"]
+position = Vector2( -90, -3 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
+[node name="Hit_Marker_4" type="Position2D" parent="HitAnimations/Hit_Effects_Left"]
+position = Vector2( -95, 47 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
+[node name="Hit_Marker_5" type="Position2D" parent="HitAnimations/Hit_Effects_Left"]
+position = Vector2( -66, 80 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
+[node name="Hit_Marker_6" type="Position2D" parent="HitAnimations/Hit_Effects_Left"]
+position = Vector2( -21, 114 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
+[node name="Hit_Marker_7" type="Position2D" parent="HitAnimations/Hit_Effects_Left"]
+position = Vector2( -12, -48 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
+[node name="Hit_Marker_8" type="Position2D" parent="HitAnimations/Hit_Effects_Left"]
+position = Vector2( -38, -11 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
+[node name="Hit_Marker_9" type="Position2D" parent="HitAnimations/Hit_Effects_Left"]
+position = Vector2( -18, 41 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
+[node name="Healthbar" parent="." instance=ExtResource( 2 )]
+
+[connection signal="timeout" from="AttackAlarm" to="." method="_on_AttackAlarm_timeout"]

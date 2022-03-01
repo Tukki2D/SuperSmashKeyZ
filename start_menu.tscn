@@ -1,0 +1,130 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://imports/DarkUnderground.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Background/Water.tscn" type="PackedScene" id=2]
+[ext_resource path="res://imports/SuperSmashKeyZ.png" type="Texture" id=3]
+[ext_resource path="res://imports/DBZSong.wav" type="AudioStream" id=4]
+[ext_resource path="res://resources/runtime_data.tres" type="Resource" id=5]
+[ext_resource path="res://start_menu.gd" type="Script" id=6]
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.027451, 0.0117647, 0.027451, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "fade_to_black_anim"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.027451, 0.0117647, 0.027451, 0 ), Color( 0.027451, 0.0117647, 0.027451, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="Start_Menu" type="Spatial"]
+script = ExtResource( 6 )
+runtime_data = ExtResource( 5 )
+blue = Color( 0.380392, 0.380392, 0.380392, 1 )
+green = Color( 0.87451, 0.662745, 0.0941176, 1 )
+red = Color( 0.792157, 0.792157, 0.792157, 1 )
+
+[node name="Sandbox" parent="." instance=ExtResource( 2 )]
+
+[node name="Black_Canvas" type="CanvasLayer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Black_Canvas"]
+anims/RESET = SubResource( 4 )
+anims/fade_to_black_anim = SubResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="Black_Canvas/AnimationPlayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.027451, 0.0117647, 0.027451, 0 )
+
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Sprite" type="Sprite" parent="ViewportContainer"]
+position = Vector2( 640, 360 )
+texture = ExtResource( 3 )
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 1280, 720 )
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="Camera" type="Camera" parent="ViewportContainer/Viewport"]
+transform = Transform( 1, 0, 0, 0, 0.38249, 0.92396, 0, -0.92396, 0.38249, 0, 20.2, -65.4099 )
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+
+[node name="SoundPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Type" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -332.0
+margin_top = 195.0
+margin_right = -32.0
+margin_bottom = 286.0
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]Type[/center]"
+text = "Type"
+
+[node name="TypeSpace" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -179.0
+margin_top = 195.0
+margin_right = 121.0
+margin_bottom = 286.0
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]space[/center]"
+text = "space"
+
+[node name="Type2" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 13.0
+margin_top = 195.0
+margin_right = 313.0
+margin_bottom = 286.0
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]to start[/center]"
+text = "to start"
+
+[connection signal="animation_finished" from="Black_Canvas/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

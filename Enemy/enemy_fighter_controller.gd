@@ -2,12 +2,22 @@ extends Spatial
 
 export(Resource) var runtime_data = runtime_data as RuntimeData
 
+onready var Healthbar = preload("res://Enemy/enemy_health_bar.tscn")
 onready var AttackAlarm = get_node("AttackAlarm")
 
 
 func _ready():
 	GameEvents_Connect()
 	randomize()
+	instance_healthbar()
+
+
+func game_ready() -> void:
+	instance_healthbar()
+
+func instance_healthbar() -> void:
+	var _healthbar = Healthbar.instance()
+	add_child(_healthbar)	
 
 
 func _on_AttackAlarm_timeout():

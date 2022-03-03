@@ -2,14 +2,14 @@ extends Spatial
 
 onready var menu = preload("res://scenes/win_lose_menu/win_lose_menu.tscn")
 onready var WordArtAsset  = get_node("FightSprites/WordArtAsset")
-onready var DebugPlayerSprites  = get_node("FightSprites/Viewport/CameraStand/Players")
+onready var DebugPlayerSprites  = get_node("FightSprites/Viewport/CameraStand/DebugSprites")
 
 func _ready() -> void:
 	GameEvents.connect("game_end", self, "game_end")
 	GameEvents.connect("game_ready", self, "game_ready")
 	GameEvents.connect("game_start", self, "game_start")
 	WordArtAsset.visible = true
-	DebugPlayerSprites.visible = true
+	DebugPlayerSprites.visible = false
 
 
 func game_ready() -> void:

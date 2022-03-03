@@ -1,7 +1,7 @@
 extends Node2D
 
 var hit_animator = preload("res://coding_art_assets/hit_sprites.tscn")
-onready var Enemy_Gets_Hit  = get_node("Hit_Effects_Right")
+onready var Enemy_Gets_Hit   = get_node("Hit_Effects_Right")
 onready var Player_Gets_Hit  = get_node("Hit_Effects_Left")
 
 func _ready() -> void:

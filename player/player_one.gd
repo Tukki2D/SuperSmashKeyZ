@@ -3,6 +3,7 @@ extends Spatial
 export(Resource) var runtime_data = runtime_data as RuntimeData
 
 onready var Enemy = preload("res://Enemy/Text_Enemy/enemy3d.tscn")
+onready var Healthbar = preload("res://player/Healthbar/healthbar.tscn")
 onready var enemy_container = get_node("EnemyContainer")
 onready var music_player = get_node("Music_Player")
 
@@ -15,9 +16,19 @@ var dead_enemy = 0
 func _ready() -> void:
 	randomize()
 	connect_to_game_events()
+	instance_healthbar()
 	
+
 func _on_GameReadyTimer_timeout() -> void:
 	runtime_data.current_gameplay_state = Enums.GameplayState.CAN_TYPE
+	
+	
+func game_ready() -> void:
+	instance_healthbar()
+
+func instance_healthbar() -> void:
+	var _healthbar = Healthbar.instance()
+	add_child(_healthbar)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -145,6 +156,7 @@ func queue_free_enemies() -> void:
 func connect_to_game_events() -> void:
 	GameEvents.connect("game_end", self, "game_end")
 	GameEvents.connect("game_start", self, "game_start")
+	GameEvents.connect("game_ready", self, "game_ready")
 	GameEvents.connect("player_one_ran_out_of_time", self, "player_ran_out_of_time")
 	GameEvents.connect("debug_key", self, "debug_key")
 
